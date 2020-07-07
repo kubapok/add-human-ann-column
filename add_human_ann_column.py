@@ -17,7 +17,7 @@ def get_lines_marker_set(total_file_lines, lines_number_to_mark):
 def mark_file(f_in_path, f_out_path, marker_set):
     with open(f_in_path,'r',newline = '\n') as f_in, open(f_out_path, 'w', newline = '\n') as f_out:
         for counter, line_in in enumerate(f_in):
-            marker = '1' if counter in marker_set else '0'
+            marker = 'IS_FOR_HUMANS' if counter in marker_set else 'IS_NOT_FOR_HUMANS'
             line_out = marker + '\t' + line_in
             f_out.write(line_out)
 
